@@ -1,18 +1,15 @@
 // main.go
 package main
 
-import (
-	"fmt"
-)
-
 type GeneticAlgorithm interface {
 	Hello() string
 }
 
 func main() {
-	var a GeneticAlgorithm
+	a := NewGeneticAlgorithmImg()
 
-	a = NewGeneticAlgorithmImg()
-
-	fmt.Println("Hello World!  ", a.Hello())
+	for i := 0; i < 3000; i++ {
+		a.Sort()
+		a.MkChilds()
+	}
 }
